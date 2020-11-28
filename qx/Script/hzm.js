@@ -2,12 +2,16 @@ const $ = new Env('互助码')
 $.zdUrl = 'http://api.turinglabs.net/api/v1/jd/bean/create/mlrdw3aw26j3wdmiwwffh2q37hk4wklt5ggbcli/'
 $.ncUrl = 'http://api.turinglabs.net/api/v1/jd/farm/create/5b1a56bab6ef4f87ba9cf8dc3e77ded7/'
 $.mcUrl = 'http://api.turinglabs.net/api/v1/jd/pet/create/MTAxODc2NTEzOTAwMDAwMDAyODg5MDE5Mw==/'
+$.ddgcUrl = 'http://api.turinglabs.net/api/v1/jd/ddfactory/create/P04z54XCjVWnYaS5m9cZ2Xx3H0bw2mbP_lOqGA/'
+$.jxgcUrl = 'http://api.turinglabs.net/api/v1/jd/jxfactory/create/Jvtm1tfoa9X2Yibu64vFOg==/'
 $.result = []
 
 !(async () => {
   await createZd()
   await createNc()
   await createMc()
+  await createDdgc()
+  await createJxgc()
   await showMsg()
 })()
   .catch((e) => $.logErr(e))
@@ -84,6 +88,56 @@ function createMc() {
     })
   })
 }
+
+// 东东工厂
+function createDdgc() {
+  return new Promise((resolve) => {
+    const url = { url: $.ddgcUrl }
+    $.get(url, (err, resp, data) => {
+      try {
+        const obj = JSON.parse(data)
+        if (obj.code == 200) {
+          $.result.push("东东工厂互助码添加成功✅")
+        }else
+        if(obj.code == 400) {
+          $.result.push("东东工厂互助码已存在")
+        }else{
+          $.result.push("东东工厂互助码添加异常")
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve()
+      }
+    })
+  })
+}
+
+
+// 京喜工厂
+function createJxgc() {
+  return new Promise((resolve) => {
+    const url = { url: $.jxgcUrl }
+    $.get(url, (err, resp, data) => {
+      try {
+        const obj = JSON.parse(data)
+        if (obj.code == 200) {
+          $.result.push("京喜工厂互助码添加成功✅")
+        }else
+        if(obj.code == 400) {
+          $.result.push("京喜工厂互助码已存在")
+        }else{
+          $.result.push("京喜工厂互助码添加异常")
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve()
+      }
+    })
+  })
+}
+
 
 function showMsg() {
   return new Promise((resolve) => {
