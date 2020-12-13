@@ -152,7 +152,7 @@
         "0 9 * * * https://raw.githubusercontent.com/iepngs/Script/master/lxhealth/manual.js, tag=步数上传, img-url=https://raw.githubusercontent.com/Orz-3/task/master/lxhealth.png, enabled=false",
         "0 9 * * * https://raw.githubusercontent.com/iepngs/Script/master/studygolang/index.js, tag=go语言中文网, img-url=https://raw.githubusercontent.com/Orz-3/task/master/studygolang.png, enabled=false",
         "29 8 * * * https://raw.githubusercontent.com/iepngs/Script/master/ctrip/index.js,tag=携程旅行, img-url=https://raw.githubusercontent.com/Orz-3/task/master/ctrip.png, enabled=false",
-        "5,35 8-21 * * * https://raw.githubusercontent.com/iepngs/Script/master/jrtt/index.js,tag=今日头条极速版, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jrtt.png, enabled=false",
+        "5,35 8-21 * * * https://raw.githubusercontent.com/258404256/abu-qx/main/qx/Script/jrttSign.js,tag=今日头条极速版, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jrtt.png, enabled=false",
         "0 9 * * * https://raw.githubusercontent.com/iepngs/Script/master/lxsj/index.js,tag=旅行世界购物版, img-url=https://raw.githubusercontent.com/Orz-3/task/master/lxsj.png, enabled=false",
         "0 0 0,1 * * ? https://raw.githubusercontent.com/lowking/Scripts/master/QQVip/qqVipCheckIn.js, tag=qq会员成长值, img-url=https://raw.githubusercontent.com/Orz-3/task/master/qqvip.png, enabled=false",
         "0 0 0,1 * * ? https://raw.githubusercontent.com/lowking/Scripts/master/bilibili/bangumiMonitor.js, tag=哔哩哔哩番剧监控, img-url=https://raw.githubusercontent.com/Orz-3/task/master/bilibili.png, enabled=false",
@@ -206,6 +206,8 @@
         "0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/mygmcSign.js, tag=民盈国贸城, img-url=https://raw.githubusercontent.com/Orz-3/task/master/mygmc.png, enabled=false",
         "0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/qkylck.js, tag=趣客有礼, img-url=https://raw.githubusercontent.com/Orz-3/task/master/qkyl.png, enabled=false",
         "0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/wsxqSign.js, tag= 微商星球, img-url=https://raw.githubusercontent.com/Orz-3/task/master/wsxq.png, enabled=false",
-        "0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/zscdbSign.js, tag=追书畅读版, img-url=https://raw.githubusercontent.com/Orz-3/task/master/zscdb.png, enabled=false"
+        "3 5 * * * https://raw.githubusercontent.com/258404256/abu-qx/main/qx/Script/hzm.js,tag=互助码1, img-url=https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/Z012.png, enabled=false",
+        "6 5 * * * https://raw.githubusercontent.com/258404256/abu-qx/main/qx/Script/hzm2.js,tag=互助码2, img-url=https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/Z012.png, enabled=false",
+        "0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/zscdbSign.js, tag=追书畅读版, img-url=https://raw.githubusercontent.com/Orz-3/task/master/zscdb.png, enabled=false",
     ]
 }
