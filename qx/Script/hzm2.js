@@ -4,6 +4,8 @@ $.ncUrl = 'http://api.turinglabs.net/api/v1/jd/farm/create/1d5d5dc1e18f4fc48c3ca
 $.mcUrl = 'http://api.turinglabs.net/api/v1/jd/pet/create/MTAxODc2NTEzNTAwMDAwMDAzMjQ0MTI4Nw==/'
 $.ddgcUrl = 'http://api.turinglabs.net/api/v1/jd/ddfactory/create/P04z54XCjVWnYaS5m9cZ2Wr2C1DkUswNRBJm8U/'
 $.jxgcUrl = 'http://api.turinglabs.net/api/v1/jd/jxfactory/create/-fkGyssqStB_pMyKgc7u4A==/'
+$.fkjoyUrl = 'https://code.chiang.fun/api/v1/jd/jdcrazyjoy/create/SplpE98yo3CcIuAs7xv3Lat9zd5YaBeE/'
+$.jdzzUrl = 'https://code.chiang.fun/api/v1/jd/jdzz/create/S5KkcRU0cpF3TJBz8kaQOcQ/'
 $.result = []
 
 !(async () => {
@@ -12,6 +14,8 @@ $.result = []
   await createMc()
   await createDdgc()
   await createJxgc()
+  await createFkjoy()
+  await createJdzz()
   await showMsg()
 })()
   .catch((e) => $.logErr(e))
@@ -138,6 +142,53 @@ function createJxgc() {
   })
 }
 
+// 疯狂Joy
+function createFkjoy() {
+  return new Promise((resolve) => {
+    const url = { url: $.fkjoyUrl }
+    $.get(url, (err, resp, data) => {
+      try {
+        const obj = JSON.parse(data)
+        if (obj.code == 200) {
+          $.result.push("疯狂Joy互助码添加成功✅")
+        }else
+        if(obj.code == 400) {
+          $.result.push("疯狂Joy互助码已存在")
+        }else{
+          $.result.push("疯狂Joy互助码添加异常")
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve()
+      }
+    })
+  })
+}
+
+// 京东赚赚
+function createJdzz() {
+  return new Promise((resolve) => {
+    const url = { url: $.jdzzUrl }
+    $.get(url, (err, resp, data) => {
+      try {
+        const obj = JSON.parse(data)
+        if (obj.code == 200) {
+          $.result.push("京东赚赚互助码添加成功✅")
+        }else
+        if(obj.code == 400) {
+          $.result.push("京东赚赚互助码已存在")
+        }else{
+          $.result.push("京东赚赚互助码添加异常")
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve()
+      }
+    })
+  })
+}
 
 function showMsg() {
   return new Promise((resolve) => {

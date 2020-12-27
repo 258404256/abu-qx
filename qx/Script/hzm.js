@@ -4,6 +4,8 @@ $.ncUrl = 'http://api.turinglabs.net/api/v1/jd/farm/create/5b1a56bab6ef4f87ba9cf
 $.mcUrl = 'http://api.turinglabs.net/api/v1/jd/pet/create/MTAxODc2NTEzOTAwMDAwMDAyODg5MDE5Mw==/'
 $.ddgcUrl = 'http://api.turinglabs.net/api/v1/jd/ddfactory/create/P04z54XCjVWnYaS5m9cZ2Xx3H0bw2mbP_lOqGA/'
 $.jxgcUrl = 'http://api.turinglabs.net/api/v1/jd/jxfactory/create/Jvtm1tfoa9X2Yibu64vFOg==/'
+$.fkjoyUrl = 'https://code.chiang.fun/api/v1/jd/jdcrazyjoy/create/1Y6VkyzR4rLBEJB3-4itIqt9zd5YaBeE/'
+$.jdzzUrl = 'https://code.chiang.fun/api/v1/jd/jdzz/create/S5KkcRRcY9AWBIRL2nf4LdQ/'
 $.result = []
 
 !(async () => {
@@ -12,6 +14,8 @@ $.result = []
   await createMc()
   await createDdgc()
   await createJxgc()
+  await createFkjoy()
+  await createJdzz()
   await showMsg()
 })()
   .catch((e) => $.logErr(e))
@@ -128,6 +132,54 @@ function createJxgc() {
           $.result.push("京喜工厂互助码已存在")
         }else{
           $.result.push("京喜工厂互助码添加异常")
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve()
+      }
+    })
+  })
+}
+
+// 疯狂Joy
+function createFkjoy() {
+  return new Promise((resolve) => {
+    const url = { url: $.fkjoyUrl }
+    $.get(url, (err, resp, data) => {
+      try {
+        const obj = JSON.parse(data)
+        if (obj.code == 200) {
+          $.result.push("疯狂Joy互助码添加成功✅")
+        }else
+        if(obj.code == 400) {
+          $.result.push("疯狂Joy互助码已存在")
+        }else{
+          $.result.push("疯狂Joy互助码添加异常")
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve()
+      }
+    })
+  })
+}
+
+// 京东赚赚
+function createJdzz() {
+  return new Promise((resolve) => {
+    const url = { url: $.jdzzUrl }
+    $.get(url, (err, resp, data) => {
+      try {
+        const obj = JSON.parse(data)
+        if (obj.code == 200) {
+          $.result.push("京东赚赚互助码添加成功✅")
+        }else
+        if(obj.code == 400) {
+          $.result.push("京东赚赚互助码已存在")
+        }else{
+          $.result.push("京东赚赚互助码添加异常")
         }
       } catch (e) {
         $.logErr(e, resp)
