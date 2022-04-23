@@ -23,8 +23,8 @@ export ksCookie='kuaishou.api_st=xxxxxxxxxxxx; did=yyyyyyyyyyy;'
 #快手
 22 10-20 * * * https://raw.githubusercontent.com/leafxcy/JavaScript/main/ks.js, tag=快手, enabled=true
 [rewrite_local]
-appsupport/yoda/biz/info url script-request-header https://raw.githubusercontent.com/leafxcy/JavaScript/main/ks.js
-ksapp/client/package/renew url script-request-header https://raw.githubusercontent.com/leafxcy/JavaScript/main/ks.js
+appsupport/yoda/biz/info url script-request-header https://raw.githubusercontent.com/258404256/abu-qx/main/qx/Script/ks.js
+ksapp/client/package/renew url script-request-header https://raw.githubusercontent.com/258404256/abu-qx/main/qx/Script/ks.js
 [MITM]
 hostname = api.kuaisho*.com
 hostname = open.kuaisho*.com
